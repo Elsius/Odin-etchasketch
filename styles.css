@@ -1,0 +1,25 @@
+#gameBox {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    width: 800px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#newGame {
+    width: 30%;
+}
+
+#gridBox{
+    display: flex;
+}
+
+.divGridBox {
+    width: 5px;
+    height: 5px;
+    background-color: aqua;
+}
+.divGridBox:hover {
+    background-color: yellow;
+}
