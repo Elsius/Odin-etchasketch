@@ -16,12 +16,9 @@ function createGame() {
             const divBox = document.createElement('div')
             divBox.setAttribute("id", `${i},${j}`)
             divBox.setAttribute('class','divGridBox')
+            divBox.addEventListener('mouseover',etchsketch)
             column.appendChild(divBox)
         }
-    }
-    etch = document.querySelectorAll('.divGridBox');
-    for (k = 0; k < (i*j);k++){
-    etch[k].addEventListener('mouseover', etchsketch);
     }
 }
 
