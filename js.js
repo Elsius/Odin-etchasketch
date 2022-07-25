@@ -1,4 +1,5 @@
 const newGameButton = document.querySelector('#newGame');
+let etch = null;
 newGameButton.addEventListener('click', createGame)
 
 //create game area 16x16 grid
@@ -7,15 +8,23 @@ function createGame() {
     //newGameButton.style.display = 'none';
     const gridBox = document.querySelector('#gridBox');
     gridBox.innerHTML = '';
-    for (i = 0; i < 40; i++) { //loop creates a column to put items in
+    for (i = 0; i < 4; i++) { //loop creates a column to put items in
         const column = document.createElement('div')
         column.setAttribute('class',`column${i}`)
         gridBox.appendChild(column)
-        for (j = 0; j < 40; j++) { //loop for each item in the row
+        for (j = 0; j < 4; j++) { //loop for each item in the row
             const divBox = document.createElement('div')
             divBox.setAttribute("id", `${i},${j}`)
             divBox.setAttribute('class','divGridBox')
             column.appendChild(divBox)
         }
     }
+    etch = document.querySelectorAll('.divGridBox');
+    for (k = 0; k < (i*j);k++){
+    etch[k].addEventListener('mouseover', etchsketch);
+    }
+}
+
+function etchsketch(target) {
+    target.currentTarget.setAttribute('style', `background-color: yellow;`)
 }
